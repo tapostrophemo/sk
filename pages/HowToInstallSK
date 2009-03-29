@@ -1,0 +1,35 @@
+<h1>How to install <tt>sk</tt></h1>
+1. Download the most recent version of the code (DownloadSK) and unzip
+    the files to a temporary directory.
+
+2. Create two directories, one for your wiki pages, and one that <tt>sk</tt> will
+    use to store operational data; ensure that <tt>sk</tt> will have read/write/create
+    access to these directories.
+
+3. Make configuration changes to the <tt>sk.pl</tt> source file to specify your "pages"
+    and "data" directories (see comments in SkConfiguration and the source).
+
+4. Move/copy the configured <tt>sk.pl</tt> source file to the directory on your
+    web server where it executes Perl scripts (e.g., <tt>cgi-bin/</tt>).
+
+5. Move the JavaScript, CSS, and PNG files to an appropriate location
+    on your server.
+
+6. Move other files as desired (e.g., the "pages" files in the distribution) if
+    you want them on your site.
+
+<b>Windows notes</b>:
+- If you need a Perl and Apache installation on your machine, you might
+  try IndigoPerl (<a href="http://www.indigostar.com">www.indigostar.com</a>)
+- If you're running under IIS, you'll probably have to turn taint checking off
+  (i.e., the shebang line should read <tt>#!perl -w</tt> instead of <tt>#!perl -wT</tt>)
+- Google for the system configuration settings you might need to make (or
+  request from your sysadmin) to get IIS (or even PWS) to recognize and
+  execute Perl scripts
+
+<b>*nix notes</b>; following the general instructions above, you'll also need to:
+- replace the Windows "shebang" line (<tt>#!perl</tt>) in the source with a
+  Unix-y one (<tt>#!/usr/bin/perl</tt>)
+- <tt>chown</tt> or <tt>chgrp</tt> your data/search directories so that the user running
+  Apache can write to them
+

@@ -1,0 +1,19 @@
+<h1>How to configure your deployment of <tt>sk</tt></h1>
+(This will be useful mostly to system administrators.)
+
+These and other variables are defined near the top of <tt>sk.pl</tt>, and will
+determine some of the behaviors of <tt>sk</tt>. Most of the others are self-
+explanatory, but I thought these deserved extra attention:
+
+- <tt>$IS_EDITABLE</tt> - when set to a non-zero/defined value, the wiki will
+  allow users to edit and create pages.
+
+- <tt>$MAX_PAGE_SIZE</tt> - the maximum allowable approximate* size (in bytes)
+  for the wiki-pages on your site. I write "approximate" because this is
+  assigned to <tt>$C<nobr><tt>G</tt></nobr>I::POST_MAX</tt>, which will limit the entire POST size, including
+  the name of the page you're creating/editing, so the actual allowable
+  page size will be slightly smaller.
+
+  By default this is set to 800K, which, given that the wiki pages themselves
+  are simple text files, ought to be sufficient for many sites. If it turns out to
+  not be enough, adjust the number up accordingly.

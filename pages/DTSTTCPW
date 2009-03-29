@@ -1,0 +1,18 @@
+DTSTTCPW - Do the simplest thing that could possibly work.
+
+Just what it says.
+
+By the way, implementing page versioning/history is not a "simple thing".
+I wanted to implement this wiki under certain constraints (no Perl modules
+that aren't in the "core", no databases, flexibility to run on almost any
+webserver where Perl is also installed, etc.), and when faced with a design
+decision, would try to adhere to this principle.
+
+See also YAGNI, HowSimpleIsSK.
+
+---
+
+However, I might reconsider the page history thing...I think users might get
+upset if they spent lots of time working on the wiki, and then everything
+were just deleted.
+

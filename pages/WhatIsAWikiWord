@@ -1,0 +1,29 @@
+<h1>What is a Wiki Word?</h1>
+A "wiki word" is a word that follows these formatting rules:
+1. it consists of only letters;
+2. it must begin with a capital letter;
+3. it may have one or more small letters;
+4. it must also have at least one other capital letter.
+
+Surprisingly, acronyms (like HTML) end up being wiki words with this definition.
+<strike>(However, since the "special formatting" language for <tt>sk</tt> is HTML itself, you
+can hack this "feature" by inserting a &lt;N<nobr>O</nobr><nobr>B</nobr>R&gt; element between capital letters.
+View the source of this page to see an example.)</strike>
+(That doesn't work so well in Firefox/Mozilla....)
+
+Some examples are:
+- WhatIsAWikiWord
+- AreWeThereYet
+- ABC
+
+And some non-examples are:
+- abc (it has no capital letters)
+- Abc (it has only one capital letter)
+- haveSomething (only one capital, and not at the beginning)
+- Something4Me (has a number)
+- Something-To-See (has punctuation)
+
+Another way to think of a "wiki word" is that it is like a phrase of words,
+and each of the words is smushed together without spaces. Then the
+first letter of each word is capitalized so that as you read the word you
+can distinguish its parts.

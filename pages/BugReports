@@ -1,0 +1,40 @@
+<h1>Reported (and found) bugs</h1>
+- <b>Security/Critical</b> you can view any file on the filesystem with a
+  cleverly-formatted URL
+
+  affects versions prior to 0.2.9.1; please upgrade asap if you have earlier versions
+
+- dragging on the resize handle of a textbox in Firefox is weird
+
+  Yes, I'm working on that...check back in version 0.2.8.+...but it did get a little
+  better in 0.2.9
+
+- trying to create a hyperlink that includes an embeded WikiWord, for
+  example: <a href="http://somewhere.org">somewhere.org</a> would break if you tried to enter this in the wiki:
+
+  &lt;a href=&quot;http://SomeWhere.org&quot;...
+
+  leaving you with a link nested within a link...not good, but you can work around
+  it by entering your links in lowercase.
+
+  (you'll note this gets even weirder now that the standard wiki convention of
+  appending a '?' following a wiki word for a non-existent page was added in 0.2.9)
+
+  <b>New <strike>hack</strike> workaround!</b> You can work around this by URLEncoding the link...
+  or at least parts of it. For example, observe this link to the <a href="sk.pl?name=%48%6F%77%53%69%6D%70%6C%65%49%73%53%4B">How simple is <tt>sk</tt></a> page.
+
+  This trick, however, doesn't quite work for the non-query-string part of the url...<a href="http://%53%6F%6D%65%57%68%65%72%65%2E%6F%72%67">observe</a>.
+
+- acronyms (like HTML) show up as wiki words (hey, it's a <i>feature</i>!); I suppose
+  that if it's a problem for you, you can always try this cheap hack:
+
+  insert a &lt;nobr&gt; tag between two of the letters in the acronym
+
+  (though I've noticed that text following the &lt;nobr&gt; will not break in Mozilla-based
+  browsers, namely, Mozilla, and Firefox. sigh! - but you can overcome this by "closing"
+  the no-break with a &lt;/nobr&gt; element), or this even cheaper hack: learn to live
+  with the link-ified acronyms.
+
+- the text on the "edit" pages is hidden by the text box...(pending)
+
+If you encounter new ones, feel free to contact the author (AboutTheAuthor).

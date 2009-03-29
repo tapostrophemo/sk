@@ -1,0 +1,19 @@
+/* sk, a (very) simple wiki. Copyright 2006, Daniel J. Parks. */
+
+* {
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 9pt;
+}
+tt {
+  font-family: "Courier New", Courier;
+}
+#outer {
+  position: absolute;
+  padding: 1px;
+  background-color: #c0c0c0;
+  border: 1px solid #808080;
+}
+#inner {
+  background-color: white;
+  border: 1px solid #808080;
+}

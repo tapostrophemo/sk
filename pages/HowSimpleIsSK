@@ -1,0 +1,54 @@
+<b>Motivation</b>
+
+<tt>sk</tt> is so simple that:
+
+- I wrote it in one night (and added enhancements over the next few days,
+  but it still didn't take long)
+- it uses filesystem-level storage; no need for a database
+- it can run on a variety of platforms - Windows and Apache, Windows and
+  IIS, Linux and Apache are all environments under which I've run and developed
+  <tt>sk</tt>; see also HowToInstallSK
+- it has no special formatting; what you see (or type) is what you get
+- it doesn't allow for any special internal liking, other than "wiki words"
+  (see WhatIsAWikiWord)
+- you can't upload images to it; it's only text
+- it provides minimal functionality; viewing pages, editing pages, and
+  saving pages (there's no cancel button! you can't delete pages (well
+  you can, if you're the sysadmin))
+- when considering how to add versioning/history functionality, I decided
+  against it
+
+See also YAGNI, DTSTTCPW, NormansRulesOfUserCenteredDesign.
+(Coincidently, I was reading Donald A. Norman's <u>The Design of Everyday Things</u>
+about the same time I created <tt>sk</tt>.)
+
+<b>Arguments</b>
+
+<dl><dt>It's too simple...why did you make it so simple?</dt><dd>
+1. I hate learning a new formatting language for each new wiki I encounter
+2. I already know HTML (as do lots of other people); why shouldn't I use it
+    as my markup/formatting language?</dd>
+
+<dt>But what if you want to format things to look nice?</dt><dd>
+- Use HTML; the code is also so simple that it doesn't <em>disallow</em> its use.
+- And use line breaks.
+- Tweak the CSS.
+- Note that the contents of every page are displayed inside a &lt;P<nobr>R</nobr>E&gt; element.</dd>
+
+<dt>What if you want "safe" version control so you can put the wiki in a highly
+volitaile environment that allows anybody to edit it?</dt><dd>
+- Get CVS
+- Get a journaling filesystem
+- Tweak the code</dd>
+
+<dt>People don't like HTML in wikis - it's unsafe (JavaScript) or interrupts the flow of
+writing (http://www.c2.com/cgi-bin/wiki?WhyDoesntWikiDoHtml)</dt><dd>
+I don't agree, at least as far as my own uses of <tt>sk</tt>. I do understand that some
+of you out there might have other requirements, though.</dd></dl>
+
+<b>Related work</b>
+
+Recently I discovered a few other "<a href="http://www.c2.com/cgi-bin/wiki?PersonalWiki">simple</a>" wikis. In fact, I wrote this wiki
+after reading through <a href="http://www.c2.com/cgi-bin/wiki?NoteWiki">NoteWiki's</a> code (the prettiest VB I've ever seen!).
+
+Anyway, <a href="http://www.sitepoint.com/blogs/2006/01/06/a-simple-wiki-with-webpy/">this</a> is is one built in Python. I need to try it out.
