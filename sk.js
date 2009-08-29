@@ -1,4 +1,4 @@
-// sk, a (very) simple wiki. Copyright 2006, Daniel J. Parks.
+// sk, a (very) simple wiki. Copyright 2006, 2008, 2009, Daniel J. Parks.
 
 // 'findPos' and 'Point' borrowed from Tony Chang's webnote project - http://www.aypwip.org/webnote
 function findPos(obj) {
