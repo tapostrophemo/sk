@@ -1,0 +1,11 @@
+# example settings for running on Windows; note the directory separators are forward-slashes
+
+my $PAGE_DIR = 'c:/sk/pages';
+my $DATA_DIR = 'c:/sk/data';
+
+
+
+# example settings for running on a *nix server
+
+my $PAGE_DIR = '/opt/sk/pages';
+my $DATA_DIR = '/opt/sk/data';

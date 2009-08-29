@@ -1,33 +1,38 @@
-#!perl -wT
-# sk, a (very) simple wiki. Copyright (c) 2006, 2008, Daniel J. Parks.
+#!/usr/bin/perl -wT
+# sk, a (very) simple wiki. Copyright (c) 2006, 2008, 2009, Daniel J. Parks.
 
 use strict;
-my $VERSION = '0.2.9.1';
+my $VERSION = '0.2.9.2';
 
+#
 # To install sk, edit this file and set the variables in the CONFIGURATION section.
 # Then place this file in a directory on your webserver where Perl scripts are
 # allowed to execute. You also need to put the CSS/JS/PNG files in an appropriate
 # location. Ensure the server has read/write access to $PAGE_DIR and $DATA_DIR.
 # Also, don't make $PAGE_DIR and $DATA_DIR the same directory.
-
+#
+# (see 'sample_settings.txt' for both Windows and *nix examples)
+#
 # THE AUTHOR DISCLAIMS ALL RESPONSIBILITY AND LIABILITY FOR ANY HARM DONE TO YOU,
 # YOUR DATA, YOUR SYSTEMS, OR TO OTHERS, THEIR DATA, AND THEIR SYSTEMS, THROUGH
 # YOUR USE OF THIS PROGRAM. THIS PROGRAM IS RELEASED WITHOUT WARRANTY OF FITNESS
 # FOR ANY PARTICULAR USE OR PURPOSE.
+#
 
 use CGI qw(script_name);
 use IO::File;
 use File::Spec;
 
 ### BEGIN CONFIGURATION ###
-my $CSS           = '/sk.css';     # (web) path and name of your stylesheet
-my $JS            = '/sk.js';      # (web) path and name of the necessary JavaScript
-my $IMAGE_DIR     = '/';           # (web) path to location of your images
-my $PAGE_DIR      = 'c:/sk/pages'; # (filesystem) path to your pages directory
-my $DATA_DIR      = 'c:/sk/data';  # (filesystem) path to your data directory (holds index and search data)
-my $START_PAGE    = 'WelcomeToSK'; # wikiname of your start/default page
-my $IS_EDITABLE   = 1;             # indicates whether or not pages are editable (hides/shows 'edit' link, allows/disallows new page creation)
-my $MAX_PAGE_SIZE = 1024*100*8;    # will limit the size of your pages; see also CGI.pm docs
+my $CSS            = '/sk/sk.css';    # (web) path and name of your stylesheet
+my $JS             = '/sk/sk.js';     # (web) path and name of the necessary JavaScript
+my $IMAGE_DIR      = '/sk/';          # (web) path to location of your images
+my $PAGE_DIR       = '/opt/sk/pages'; # (filesystem) path to your pages directory (wiki pages data)
+my $DATA_DIR       = '/opt/sk/data';  # (filesystem) path to your data directory (index/search data)
+my $START_PAGE     = 'WelcomeToSK';   # wikiname of your start/default page
+my $IS_EDITABLE    = 1;               # indicates whether or not pages are editable
+my $VERBOSE_ERRORS = 0;               # indicates whether or not verbose error messages display
+my $MAX_PAGE_SIZE  = 1024*100*8;      # will limit the size of your pages; see also CGI.pm docs
 ### END CONFIGURATION ###
 
 $CGI::DISABLE_UPLOADS = 1;
@@ -161,9 +166,13 @@ sub edit {
 }
 sub save {
   my ($self, $name) = @_;
+  unless ($IS_EDITABLE) {
+    $self->error('this wiki is not editable');
+    return;
+  }
   eval { Page->save($name, $self->param('text')) };
   if ( $@ ) {
-    $self->error("unable to save page '$name'. " . $@);
+    $self->error("unable to save page '$name'. " . ($VERBOSE_ERRORS ? $@ : ''));
     return;
   }
   $self->view($name);
@@ -293,7 +302,7 @@ sub editing {
     $content .= form($page, $cgi);
   }
   else {
-    $content .= $self->controls($page);
+    $content .= 'This wiki is not currently editable.' . $self->controls($page);
   }
   $self->render($page->name, $content, $cgi, 'initPage()');
 }
