@@ -1,40 +1,40 @@
-<b>Some thoughts on what implementing page versioning will require...</b>
-
-Well, I got as far as implementing what's struck out in the list below, but
-then noticed that for every item in the first chunk I'd add one or two items
-to the chunks below. For example, after reading a specific version, I saw
-that I'd also have to filter out all but the most recent versions from the
-indexing and searching functions.
-
-(I put all this code in sk-0.2.6.1, but then reverted my dev back to 0.2.6.)
-
-So, I'm re-prioritizng the EnhancementRequests page, moving this down
-the list a bit. Still, I have a nagging feeling that in order to meet the true
-needs of potential users, I'll need some sort of versioning.
-
-<hr>
-
-<strike>reading file for display in view or edit - always use newest version
--> finding newest version of file
-    1. using file name, glob all files in $PAGE_DIR that match
-    2. sort them by the version number
-    3. take the "largest" one
--> reading specific version of file (yet still maintain a non-versioned file
-    name in the display and on edits)</strike>
-
-writing file after edit - 2 conditions: 1) create new file (version 0) or 2) create new version
--> locking file name
-   -> if file name locked, do something else...what? try again? warn the user?
--> if version does not exist, create new file with version V=0
-   -> how to create version? next larger number?
--> if version exists, compute next version V, then create file with version V
--> write to file
--> unlock file name
-
-special cases for reading
--> need to filter older versions out while indexing/searching
--> don't read version of Index/Search
--> don't read Index/Search while they're being written
-
-special cases for writing
--> need lock around writing Index/Search
+<b>Some thoughts on what implementing page versioning will require...</b>
+
+Well, I got as far as implementing what's struck out in the list below, but
+then noticed that for every item in the first chunk I'd add one or two items
+to the chunks below. For example, after reading a specific version, I saw
+that I'd also have to filter out all but the most recent versions from the
+indexing and searching functions.
+
+(I put all this code in sk-0.2.6.1, but then reverted my dev back to 0.2.6.)
+
+So, I'm re-prioritizng the EnhancementRequests page, moving this down
+the list a bit. Still, I have a nagging feeling that in order to meet the true
+needs of potential users, I'll need some sort of versioning.
+
+<hr>
+
+<strike>reading file for display in view or edit - always use newest version
+-> finding newest version of file
+    1. using file name, glob all files in $PAGE_DIR that match
+    2. sort them by the version number
+    3. take the "largest" one
+-> reading specific version of file (yet still maintain a non-versioned file
+    name in the display and on edits)</strike>
+
+writing file after edit - 2 conditions: 1) create new file (version 0) or 2) create new version
+-> locking file name
+   -> if file name locked, do something else...what? try again? warn the user?
+-> if version does not exist, create new file with version V=0
+   -> how to create version? next larger number?
+-> if version exists, compute next version V, then create file with version V
+-> write to file
+-> unlock file name
+
+special cases for reading
+-> need to filter older versions out while indexing/searching
+-> don't read version of Index/Search
+-> don't read Index/Search while they're being written
+
+special cases for writing
+-> need lock around writing Index/Search

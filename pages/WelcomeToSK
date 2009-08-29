@@ -1,25 +1,25 @@
-<h1>Welcome to <tt>sk</tt>, a (very) simple wiki</h1>
-Hello. Welcome to <tt>sk</tt>, a (very) simple wiki. The name comes from the letters
-"S" in 'simple' and "K" in 'wiki'.
-
-Frequently-asked questions:
-- WhatIsAWiki
-- WhatCanYouDoWithThisWiki
-- HowSimpleIsSK
-
-
-If you want to run your own copy of this wiki, try it out at the <a href="http://www.eastofcleveland.com/sk_sandbox.pl">sandbox</a>,
-DownloadSK, and then read HowToInstallSK.
-
-
-EnhancementRequests
-BugReports
-
-
-Copyright &copy; 2006, 2008, Dan Parks. (Read more AboutTheAuthor.)
-
-The program is released in the spirit of Free/Open-source Software, though
-without a specific license.
-
-<b>Disclaimer</b>: The author disclaims all liability for adverse incidents caused by
-use of this application. See the source code for complete information.
+<h1>Welcome to <tt>sk</tt>, a (very) simple wiki</h1>
+Hello. Welcome to <tt>sk</tt>, a (very) simple wiki. The name comes from the letters
+"S" in 'simple' and "K" in 'wiki'.
+
+Frequently-asked questions:
+- WhatIsAWiki
+- WhatCanYouDoWithThisWiki
+- HowSimpleIsSK
+
+
+If you want to run your own copy of this wiki, try it out at the <a href="http://www.eastofcleveland.com/sk_sandbox.pl">sandbox</a>,
+DownloadSK, and then read HowToInstallSK.
+
+
+EnhancementRequests
+BugReports
+
+
+Copyright &copy; 2006, 2008, Dan Parks. (Read more AboutTheAuthor.)
+
+The program is released in the spirit of Free/Open-source Software, though
+without a specific license.
+
+<b>Disclaimer</b>: The author disclaims all liability for adverse incidents caused by
+use of this application. See the source code for complete information.

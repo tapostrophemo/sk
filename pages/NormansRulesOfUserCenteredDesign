@@ -1,31 +1,31 @@
-Donald A. Norman, author of <u>The Design Of Everyday Things</u>, wrote that the
-point of his writing the book was to "...advocate a user-centered design, a
-philosophy based on the needs and interests of the user, with an emphasis
-on making products usable and understandable." He continued:
-
-<blockquote>"Design should:
-
-- Make it easy to determine what actions are possible at any moment
-  (make use of constraints).
-- Make things visible, including the conceptual model of the system,
-  the alternative actions, and the results of actions.
-- Make it easy to evaluate the current state of the system.
-- Follow natural mappings between intentions and the required ac-
-  tions; between actions and the resulting effect; and between the
-  information that is visible and the interpretation of the system state.
-
-In other words, make sure that (1) the user can figure out what to do,
-and (2) the user can tell what is going on.
-     Design should make use of the natural properties of people and of
-the world: it should exploit natural relationships and natural con-
-straints. As much as possible, it should operate without instructions or
-labels. Any necessary instruction or training should be needed only
-once; with each explanation the person should be able to say, `Of
-course,' or `Yes, I see.' A simple explanation will suffice if there is
-reason to the design, if everything has its place and its function, and
-if the outcomes of the actions are visible. If the explanation leads the
-person to think or say, `How am I going to remember that?' the design
-has failed."</blockquote>
-
-I hope that the implementation of <tt>sk</tt> is an embodiment of these principles. (See
-also HowSimpleIsSK.)
+Donald A. Norman, author of <u>The Design Of Everyday Things</u>, wrote that the
+point of his writing the book was to "...advocate a user-centered design, a
+philosophy based on the needs and interests of the user, with an emphasis
+on making products usable and understandable." He continued:
+
+<blockquote>"Design should:
+
+- Make it easy to determine what actions are possible at any moment
+  (make use of constraints).
+- Make things visible, including the conceptual model of the system,
+  the alternative actions, and the results of actions.
+- Make it easy to evaluate the current state of the system.
+- Follow natural mappings between intentions and the required ac-
+  tions; between actions and the resulting effect; and between the
+  information that is visible and the interpretation of the system state.
+
+In other words, make sure that (1) the user can figure out what to do,
+and (2) the user can tell what is going on.
+     Design should make use of the natural properties of people and of
+the world: it should exploit natural relationships and natural con-
+straints. As much as possible, it should operate without instructions or
+labels. Any necessary instruction or training should be needed only
+once; with each explanation the person should be able to say, `Of
+course,' or `Yes, I see.' A simple explanation will suffice if there is
+reason to the design, if everything has its place and its function, and
+if the outcomes of the actions are visible. If the explanation leads the
+person to think or say, `How am I going to remember that?' the design
+has failed."</blockquote>
+
+I hope that the implementation of <tt>sk</tt> is an embodiment of these principles. (See
+also HowSimpleIsSK.)

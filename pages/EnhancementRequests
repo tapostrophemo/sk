@@ -1,32 +1,32 @@
-(I'll only put these in if I really need them...probably YAGNI)
-
-<b>General</b>
-- Some clever JavaScript to make the textbox resizable (in development; I've put
-  a rudimentary version in 0.2.7.*, but it still needs tweaking in order to 1) look
-  good, and 2) behave the same in multiple browsers - I'm targeting IE and Firefox)
-- Make the wiki-word links for pages that don't exist have a '?' following them
-  (instead of just making them regular hyperlinks)
-- Create an "installer" program
-- Page versions/history (see ImplementingPageVersioning)
-- Pick a license
-- Shortcut key for "Save" button?
-- Backlinks (and somewhat relatedly, find orphan pages)
-- use IO::All (http://search.cpan.org/~ingy/IO-All-0.35/lib/IO/All.pod) instead
-  of what I currently am using (IO::File)
-
-<b>Security</b>
-- On Windows (at least NT; I'll have to try 98/2000/XP), 246 is max
-  filename length; I should also check on Linux or other operating
-  systems, and enfore the value in the code
-
-  Oooooh! It gets even better (or worse)! You can create a file with a
-  name 246 characters long, but then you can't rename/delete that file!!!
-
-  Well, I can delete it from a command prompt. Anyway, just to
-  simplify things (remember DTSTTCPW) I might just limit it to 240 or
-  something...or, in the name of YAGNI, I might not.
-
-<b>"Technical debt"</b>
-- You saw the lack of unit tests? Shame on me! (By the way, when I tried to just
-  split the packages out into a separate file I realized that there's a lot of
+(I'll only put these in if I really need them...probably YAGNI)
+
+<b>General</b>
+- Some clever JavaScript to make the textbox resizable (in development; I've put
+  a rudimentary version in 0.2.7.*, but it still needs tweaking in order to 1) look
+  good, and 2) behave the same in multiple browsers - I'm targeting IE and Firefox)
+- Make the wiki-word links for pages that don't exist have a '?' following them
+  (instead of just making them regular hyperlinks)
+- Create an "installer" program
+- Page versions/history (see ImplementingPageVersioning)
+- Pick a license
+- Shortcut key for "Save" button?
+- Backlinks (and somewhat relatedly, find orphan pages)
+- use IO::All (http://search.cpan.org/~ingy/IO-All-0.35/lib/IO/All.pod) instead
+  of what I currently am using (IO::File)
+
+<b>Security</b>
+- On Windows (at least NT; I'll have to try 98/2000/XP), 246 is max
+  filename length; I should also check on Linux or other operating
+  systems, and enfore the value in the code
+
+  Oooooh! It gets even better (or worse)! You can create a file with a
+  name 246 characters long, but then you can't rename/delete that file!!!
+
+  Well, I can delete it from a command prompt. Anyway, just to
+  simplify things (remember DTSTTCPW) I might just limit it to 240 or
+  something...or, in the name of YAGNI, I might not.
+
+<b>"Technical debt"</b>
+- You saw the lack of unit tests? Shame on me! (By the way, when I tried to just
+  split the packages out into a separate file I realized that there's a lot of
   dependencies between classes...)
