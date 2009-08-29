@@ -19,6 +19,11 @@
     you want them on your site.
 
 <b>Windows notes</b>:
+- Ensure that the first line in the file reads:
+  <tt>#!/usr/bin/perl -wT</tt>
+  or possibly
+  <tt>#!/usr/bin/perl -w</tt>
+  (see below; under some conditions you won't want the final "T")
 - If you need a Perl and Apache installation on your machine, you might
   try IndigoPerl (<a href="http://www.indigostar.com">www.indigostar.com</a>)
 - If you're running under IIS, you'll probably have to turn taint checking off
@@ -28,8 +33,8 @@
   execute Perl scripts
 
 <b>*nix notes</b>; following the general instructions above, you'll also need to:
-- replace the Windows "shebang" line (<tt>#!perl</tt>) in the source with a
-  Unix-y one (<tt>#!/usr/bin/perl</tt>)
-- <tt>chown</tt> or <tt>chgrp</tt> your data/search directories so that the user running
-  Apache can write to them
+- replace the Windows "shebang" line (<tt>#!perl -wT</tt>) in the source with a
+  Unix-y one (<tt>#!/usr/bin/perl -wT</tt>)
+- <tt>chown</tt> and/or <tt>chgrp</tt> the $DATA_DIR and $PAGE_DIR directories
+  so that the webserver process can write to them
 
